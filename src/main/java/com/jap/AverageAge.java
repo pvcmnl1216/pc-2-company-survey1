@@ -10,11 +10,13 @@ public class AverageAge {
 
         try {
             double sum = 0.0;
+            double avg = 0.0;
             //Write the logic
-            for (String ageRawDatum : ageRawData)
-                sum += Double.parseDouble(ageRawDatum);
-
-            return String.valueOf(sum / ageRawData.length);
+            for (int i = 0; i < ageRawData.length; i++) {
+                sum = sum+Double.parseDouble(ageRawData[i]);
+                avg = sum / ageRawData.length;
+            }
+            return String.valueOf(avg);
 
             //Handle specific exception
         } catch (java.lang.NumberFormatException exception) {
@@ -23,7 +25,5 @@ public class AverageAge {
             return exception.toString();
         }
     }
-
-
 }
 
